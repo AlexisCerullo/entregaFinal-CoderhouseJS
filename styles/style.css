@@ -131,7 +131,7 @@ main h2 {
     font-size: 30px;
 }
 
-.boton-compra {
+#boton-compra {
     all: unset;
     cursor: pointer;
     width: 30%;

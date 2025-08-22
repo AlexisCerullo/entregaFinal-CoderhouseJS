@@ -1,0 +1,13 @@
+[{
+    "nombre": "Simple", "precio": 9000, "imagen": "simple.png"
+}, {
+    "nombre": "Doble", "precio": 13000, "imagen": "doble.png"
+}, {
+    "nombre": "Cheddar", "precio": 10000, "imagen": "cheddar.png"
+}, {
+    "nombre": "Completa", "precio": 12000, "imagen": "completa.png"
+}, {
+    "nombre": "Pollo", "precio": 9000, "imagen": "pollo.png"
+}, {
+    "nombre": "Veggie", "precio": 10000, "imagen": "veggie.png"
+}]
