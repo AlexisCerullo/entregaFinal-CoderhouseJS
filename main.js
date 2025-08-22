@@ -13,12 +13,26 @@ contenedorCuenta.appendChild(cuentaTotal);
 const botonCompra = document.getElementById('boton-compra');
 botonCompra.addEventListener('click', () => {
     if (total === 0) {
-        alert('agrega algo al carro')
+        Swal.fire({
+            icon: "error",
+            title: "Tenemos un problema!",
+            text: "Primero debes agregar algo a tu pedido!"
+        });
     } else {
-        cuenta = [];
-        guardarCuenta();
-        mostrarCuenta();
-        alert('su compra ha sido finalizada')
+        Swal.fire({
+            title: 'Quiere confirmar su pedido?',
+            showDenyButton: true,
+            confirmButtonText: "Confirmar Pedido",
+            denyButtonText: `No`
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(`Su pedido está marchando, su total es de $${total} `, "", "success");
+                cuenta = [];
+                guardarCuenta();
+                mostrarCuenta();
+            }
+        });
+
     }
 
 });
@@ -88,6 +102,12 @@ async function obtenerHamburguesas() {
             item.appendChild(botonAgregar);
 
             botonAgregar.addEventListener('click', () => {
+                Swal.fire({
+                    title: "Agregado al pedido!",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
                 cuenta.push({ nombre: hamburguesa.nombre, precio: hamburguesa.precio });
                 guardarCuenta();
                 mostrarCuenta();
